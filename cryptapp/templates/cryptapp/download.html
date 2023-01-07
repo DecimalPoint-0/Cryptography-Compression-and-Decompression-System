@@ -1,0 +1,22 @@
+{% extends 'cryptapp/base.html'%}
+{% block body %}
+
+<div class="files">
+    
+        {% for f in file %}
+        <div class="box">
+            <div style="display: flex; align-items: center;">
+                <i class="fa-solid fa-file" id="f-img" style="font-size: 3rem; color: #dfb735;"></i> 
+                &nbsp;<a href="{{ f.file.url }}"+ download="{{f.file.url}}"> {{ f.name }} </a>
+            </div>  
+            <div>
+                <h3 href="">{{ f.key }}</h3>
+            </div>
+            
+        </div>
+        {% endfor %}
+ 
+</div>
+{% endblock %}
+
+</html>

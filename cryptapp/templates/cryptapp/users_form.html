@@ -1,0 +1,70 @@
+{% extends 'cryptapp/login_base.html'%}
+{% block body %}
+
+<div class="login-container">
+    <form action="" method="post" enctype="multipart/form-data" class="login100-form">
+	{% csrf_token %}
+	{% for message in messages %}
+		<p style="background-color: coral; padding: 1rem; text-align: center; color: white;">
+			{{message}}
+			</p>
+		{% endfor %}
+	<div class="wrap-input" >
+		<span class="label-input">{{form.username.label}}</span>
+		<input class="input100" type="text" name="username" placeholder="Type your username">
+		<span class="focus-input" data-symbol="&#xf206;"></span>
+	</div>
+
+	<div class="wrap-input" >
+		<span class="label-input">{{form.email.label}}</span>
+		<input class="input100" type="email" name="email" placeholder="Type your e-mail">
+		<span class="focus-input" data-symbol="&#x1f4e7;"></span>
+	</div>
+
+	<div class="wrap-input">
+		<span class="label-input">{{form.password1.label}}</span>
+		<input class="input100" type="password" name="password1" placeholder="Type your password">
+		<span class="focus-input" data-symbol="&#xf190;"></span>
+	</div>
+
+	<div div class="wrap-input">
+		<span class="label-input">{{form.password2.label}}</span>
+		<input class="input100" type="password" name="password2" placeholder="Confirm password">
+		<span class="focus-input" data-symbol="&#xf190;"></span>
+	</div>
+					
+	<div class="wrap-login">
+		<div class="login100"></div>
+			<button class="login-btn">
+				Login
+			</button>
+	</div>
+
+	<div class="txt1">
+		<span>
+			Already have an Account? <a href="{% url 'login' %}"> CLick Here </a> to Sign in
+		</span>
+	</div>
+	</form>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

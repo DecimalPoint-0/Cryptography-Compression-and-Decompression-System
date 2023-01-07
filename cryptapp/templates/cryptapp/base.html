@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link href="{% static 'cryptapp/fontawesome/css/all.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'cryptapp/css/main.css' %}">
+    <title> Cryptography and Compression System </title>
+</head>
+<body>
+    <body>
+        <header class="nav_bar">
+            <div class="logo">
+                <img src="{% static '/cryptapp/logo.png' %}" alt="">
+                <h3>CodeGraphics</h3>
+            </div>
+            <ul>
+                <li><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+                <li><a href="{% url 'about' %}"><i class="fa fa-bell" aria-hidden="true"></i> About </a></li>
+                <li ><a href="" ><i class="fa fa-phone-square" aria-hidden="true"></i> Contact </a>
+                    <!-- <ul>
+                        <li>Encrypted Files</li>
+                        <li>Decrypted Files</li>
+                        <li>Encrypted and Compressed Files</li>
+                        <li>Decrypted and Decompressed Files</li>
+                    </ul>
+                </li>
+                <li><a href=""><i class="fa fa-eye" aria-hidden="true"></i> View </a></li> -->
+                <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout </a></li>
+            </ul>
+            <div class="user" >
+                <h3 id="user-id" style="font-family: monospace; font-size: 1.2rem; padding: 1rem 0;"><i class="fa fa-user-circle" aria-hidden="true"></i> Welcome Dear, {{request.user}}</h3>
+                <!-- <img src="{% static '/cryptapp/IMG-20220503-WA0013.jpg' %}" alt=""> -->
+            </div>
+        </header>
+    </div>
+{% block body %}
+{% endblock %}
+<footer>
+    <div><p> Copyright &copy; 2022 Codegraphics programming institute </p> </div>
+</footer>
+</body>
+</html>

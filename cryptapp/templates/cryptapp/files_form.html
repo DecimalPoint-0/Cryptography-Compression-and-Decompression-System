@@ -1,0 +1,53 @@
+{% extends 'cryptapp/base.html'%}
+{% block body %}
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="showcase">
+                    <h4><span>En</span>Cryption, </h4>
+                    <h4><span>De</span>Cryption, And</h4>
+                    <h4><span>Com</span>pression System</h4>
+                </div>
+                <div class="functionality">
+                    <form action="" method="POST"  >
+                        {% csrf_token %}
+                        <h3>Welcome to Encryption, Decryption and Compression program using Python</h3>
+                        {% for message in messages %}
+                            <p style="background-color: coral; padding: 1rem; text-align: center; color: white;">
+                                {{message}}
+                            </p>
+                        {% endfor %}
+
+                        {% for field in form %}
+                        <div>{{ field }} </div>
+                        {% endfor  %}
+                        
+                        <select name="choices" id="choices">
+                            <option>Encryption</option>
+                            <option class="selectedOption">Decryption</option>
+                            <option>Decrypt and Decompression</option>
+                            <!-- <option>Decryption and Compression</option> -->
+                            <option>Encrypt and Compression</option>
+                        </select>
+                        <input type="text" name="dkey" id="dkey" placeholder="Enter Decryption Key" style="display:none;">
+                        <!-- <p id="details"></p> -->
+                        <button >Proceed</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('#choices').addEventListener('change', (e) => {
+            if(e.target.value === 'Decryption'){
+                document.querySelector('#dkey').style.display = 'block'
+            }else{
+                document.querySelector('#dkey').style.display = 'none'
+            }
+        })
+    </script>
+{% endblock %}
+</body>
+</html>
